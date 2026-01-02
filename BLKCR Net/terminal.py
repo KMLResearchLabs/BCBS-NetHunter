@@ -56,4 +56,7 @@ ip -whs - Make WHOIS consult
 
     if cmd == "update":
         gitmancer()
+    
+    if cmd == "test":
+        print("[ OK ]")
         
