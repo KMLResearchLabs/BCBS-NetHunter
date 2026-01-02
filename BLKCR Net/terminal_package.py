@@ -16,9 +16,10 @@ def banner():
 """)
 
 def get_version():
-    print("\n")
-    print(" === <System Version> ===")
+    print(" ==== <System Version> ====")
+    print(" [+] BLKCR Net Version: 2.3")
     print(" [+] BCBS Version: 1.9")
+    print(" [+] GitMancer Version: 1.4")
     print(" [+] Developer: ByKurebo")
 
 def clear():

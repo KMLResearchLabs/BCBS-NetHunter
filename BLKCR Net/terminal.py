@@ -8,7 +8,7 @@ banner()
 
 while True:
     print("\n/[ByKurebo@BCBS]~<Root>")
-    cmd = str(input(r"\> ")).strip()
+    cmd = str(input(r"\> ")).strip().lower()
 
     ############
     # COMMANDS #
@@ -21,6 +21,7 @@ help - Show the commands
 clear - Clean the terminal
 exit - Exit the system
 version - Show the system version
+update - Check for updates
 blckport - Makes a portscan on domains
 geop - Consult phone (Only BR for now)
 ip -lcz - Track ip's
@@ -34,6 +35,7 @@ ip -whs - Make WHOIS consult
 
     if cmd == "exit":
         exit()
+        break
 
     if cmd == "version":
         get_version()
@@ -56,5 +58,11 @@ ip -whs - Make WHOIS consult
 
     if cmd == "update":
         gitmancer()
-    
-        
+        print("\n [!] If there something updated, confirm to restart the system.")
+        restart = str(input("\n Restart now? [y/n]: ")).strip().lower()
+        if restart == "y":
+            exit()
+            break
+        else:
+            print("\n [!] Restart cancelled by user.")
+       

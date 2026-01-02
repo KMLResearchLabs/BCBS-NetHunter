@@ -9,6 +9,7 @@ help - Show the commands
 clear - Clean the terminal
 exit - Exit the system
 version - Show the system version
+update - Check for updates
 blckport - Makes a portscan on domains
 geop - Consult phone (Only BR for now)
 ip -lcz - Track ip's
