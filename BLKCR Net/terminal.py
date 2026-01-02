@@ -45,7 +45,7 @@ ip -whs - Make WHOIS consult
 
     if cmd == "update":
         gitmancer()
-        print("\n [!] If there something updated, confirm to restart the system.")
+        print("\n [!] Restart required to apply updates")
         restart = str(input("\n Restart now? [y/n]: ")).strip().lower()
         if restart == "y":
             exit()
