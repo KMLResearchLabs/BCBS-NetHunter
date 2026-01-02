@@ -1,4 +1,5 @@
 from terminal_package import *
+from gitmancer import *
 from terminal_commands.blackport import *
 from terminal_commands.geo_phone import *
 from terminal_commands.ip_log import *
@@ -52,3 +53,7 @@ ip -whs - Make WHOIS consult
 
     if cmd == "ip -whs":
         get_domain_whois()
+
+    if cmd == "update":
+        gitmancer()
+        
