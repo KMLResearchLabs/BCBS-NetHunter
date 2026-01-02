@@ -4,11 +4,10 @@ from terminal_commands.blackport import *
 from terminal_commands.geo_phone import *
 from terminal_commands.ip_log import *
 
-user = get_user()
-
 banner()
 
 while True:
+    user = get_user()
     print(f"\n/[{user}@BCBS]~<Root>")
     cmd = str(input(r"\> ")).strip().lower()
 
