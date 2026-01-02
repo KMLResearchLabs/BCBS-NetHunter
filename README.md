@@ -10,6 +10,8 @@ clear - Clean the terminal
 exit - Exit the system
 version - Show the system version
 update - Check for updates
+userc - Get user configs
+userc -u - Change username
 blckport - Makes a portscan on domains
 geop - Consult phone (Only BR for now)
 ip -lcz - Track ip's
