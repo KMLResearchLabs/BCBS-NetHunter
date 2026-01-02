@@ -1,11 +1,14 @@
 #!/data/data/com.termux/files/usr/bin/bash
 set -e
 
-echo "[+] Checking files..."
-[ -f bcbs ] || { echo "[ERROR] bcbs not found"; exit 1; }
-[ -f terminal.py ] || { echo "[ERROR] terminal.py not foun"; exit 1; }
+echo "[+] Instalando BCBS-NetHunter..."
 
-echo "[+] Instaling BCBS-NetHunter..."
-chmod +x bcbs terminal.py
+TERMINAL_PY="data/data/com.termux/files/home/BCBS-NetHunter/BLKCR Net/terminal.py"
+
+chmod +x bcbs
+[ -f "$TERMINAL_PY" ] && chmod +x "$TERMINAL_PY" || echo "[!] terminal.py don't found..."
+
 cp bcbs $PREFIX/bin/bcbslauncher
-echo "[ OK ] Type: bcbslauncher"
+
+echo "[ OK ] BCBS-NetHunter is ready"
+echo "type: bcbslauncher"
