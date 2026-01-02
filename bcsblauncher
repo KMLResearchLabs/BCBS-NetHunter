@@ -1,4 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-DIR="$(cd "$(dirname "$0")" && pwd)"
-python "$DIR/BLKCR Net/terminal.py"
+cd BCBS-NetHunter
+cd 'BLKCR Net'
+python terminal.py
