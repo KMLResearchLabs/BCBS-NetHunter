@@ -4,6 +4,7 @@ from terminal_commands.blackport import *
 from terminal_commands.geo_phone import *
 from terminal_commands.ip_log import *
 
+clear()
 banner()
 
 while True:
@@ -75,3 +76,4 @@ ip -whs - Make WHOIS consult
 
     if cmd == "ip -whs":
         get_domain_whois()
+
