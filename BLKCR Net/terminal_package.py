@@ -16,11 +16,11 @@ def banner():
 """)
 
 def get_version():
-    print(" ==== <System Version> ====")
-    print(" [+] BLKCR Net Version: 2.3")
-    print(" [+] BCBS Version: 2.0")
-    print(" [+] GitMancer Version: 1.4")
-    print(" [+] Developer: ByKurebo")
+    print("==== <System Version> ====")
+    print("[+] BLKCR Net Version: 2.3")
+    print("[+] BCBS Version: 2.0")
+    print("[+] GitMancer Version: 1.4")
+    print("[+] Developer: ByKurebo")
 
 def clear():
     import os
@@ -67,4 +67,5 @@ def user_configs_USER():
         print(f"\n[ OK ] Username changed to {newuser}")
     else:
         print("\n[!] Action canceled by user")
+
 
