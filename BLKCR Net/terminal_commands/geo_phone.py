@@ -1,4 +1,4 @@
-def geo_phone_br():
+def geo_phone_br(colors):
     import phonenumbers
     from phonenumbers import geocoder, carrier, number_type, PhoneNumberType
 
@@ -39,8 +39,8 @@ def geo_phone_br():
     print(" ")
     print(f"=== <{phone_formated} REPORT> ===")
     print("-" * 40)
-    print(f"[+] Consulted phone: {phone_formated}")
-    print(f"[+] Type: {final_type}")
-    print(f"[+] Carrier: {operadora}") 
-    print(f"[+] Location: {location}")
+    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Consulted phone: {phone_formated}")
+    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Type: {final_type}")
+    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Carrier: {operadora}") 
+    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Location: {location}")
     print("-" * 40)

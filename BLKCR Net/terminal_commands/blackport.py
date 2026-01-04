@@ -1,4 +1,4 @@
-def blackport():
+def blackport(colors):
     import socket
     from concurrent.futures import ThreadPoolExecutor
 
@@ -40,7 +40,7 @@ def blackport():
 
         print("\n=== <BlackPort Report> ===")
         print("-" * 40)
-        print(f"[+] Open doors of {target}:")
+        print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Open doors of {target}:")
 
         # remove duplicates
         unique_ports = list(set(open_ports))
@@ -48,7 +48,7 @@ def blackport():
 
         for port, proto in unique_ports:
             service = get_service(port, proto if "TCP" in proto else "TCP")
-            print(f"[+] Port: {port} (Protocol: {proto}/Service: {service})")
+            print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Port: {port} (Protocol: {proto}/Service: {service})")
 
         print("-" * 40)
 

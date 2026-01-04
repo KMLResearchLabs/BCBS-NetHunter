@@ -1,16 +1,20 @@
+from colorama import init, Fore, Style
 from terminal_package import *
 from gitmancer import *
 from terminal_commands.blackport import *
 from terminal_commands.geo_phone import *
 from terminal_commands.ip_log import *
 
-clear()
-banner()
+init()
+
+theme_banner()
 
 while True:
+    colors = theme()
     user = get_user()
-    print(f"\n/[{user}@BCBS]~<Root>")
+    print(f"\n/[{colors['%USR%']}{user}@BCBS{colors['%---%']}]{colors['%~~~%']}~{colors['%---%']}<{colors['%ROT%']}Root{colors['%---%']}>")
     cmd = str(input(r"\> ")).strip().lower()
+
 
     ############
     # COMMANDS #
@@ -35,45 +39,47 @@ ip -whs - Make WHOIS consult
 
     if cmd == "clear":
         clear()
-        banner()
+        theme_banner()
 
     if cmd == "exit":
         exit()
         break
 
     if cmd == "version":
-        get_version()
+        get_version(colors)
 
     if cmd == "update":
-        gitmancer()
-        print("\n [!] Restart required to apply updates")
+        gitmancer(colors)
+        print(f"\n [{colors["%>!<%"]}!{colors["%---%"]}] Restart required to apply updates")
         restart = str(input("\n Restart now? [y/n]: ")).strip().lower()
         if restart == "y":
             exit()
             break
         else:
-            print("\n [!] Restart cancelled by user.")
+            print(f"\n [{colors["%>!<%"]}!{colors["%---%"]}] Restart cancelled by user.")
        
 
     if cmd == "userc":
         user_configs()
 
     if cmd == "userc -u":
-        user_configs_USER()
+        user_configs_USER(colors)
+
+    if cmd == "userc -t":
+        user_configs_THEME(colors)
 
 
     if cmd == "blckport":
-        blackport()
+        blackport(colors)
 
     if cmd == "geop":
-        geo_phone_br()
+        geo_phone_br(colors)
 
     if cmd == "ip -lcz":
-        geo_IP()
+        geo_IP(colors)
 
     if cmd == "ip -dmn":
-        get_domain_ip()
+        get_domain_ip(colors)
 
     if cmd == "ip -whs":
-        get_domain_whois()
-
+        get_domain_whois(colors)
