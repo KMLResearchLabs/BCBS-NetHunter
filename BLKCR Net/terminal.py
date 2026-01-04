@@ -30,6 +30,7 @@ version - Show the system version
 update - Check for updates
 userc - Get user configs
 userc -u - Change username
+userc -t - Change sys theme
 blckport - Makes a portscan on domains
 geop - Consult phone (Only BR for now)
 ip -lcz - Track ip's
