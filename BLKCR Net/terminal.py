@@ -6,7 +6,7 @@ from terminal_commands.geo_phone import *
 from terminal_commands.ip_log import *
 
 init()
-claer()
+clear()
 theme_banner()
 
 while True:
