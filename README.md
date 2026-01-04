@@ -14,6 +14,7 @@ that the program ask to you):
 1. pkg upgrade
 2. pkg install python
 3. pkg install git
+4. pip install colorama
 
 Now you have Termux in the latest version with Python and Git. To get BCBS, clone the repo using:
 
@@ -83,15 +84,16 @@ Type your new username, and after confirm the action.
 
   
 Terminal commands:  
-help - Show the commands                
-clear - Clean the terminal  
-exit - Exit the system  
-version - Show the system version  
-update - Check for updates  
-userc - Get user configs  
-userc -u - Change username  
-blckport - Makes a portscan on domains  
-geop - Consult phone (Only BR for now)  
-ip -lcz - Track ip's  
-ip -dmn - Get domains ip  
+help - Show the commands              
+clear - Clean the terminal
+exit - Exit the system
+version - Show the system version
+update - Check for updates
+userc - Get user configs
+userc -u - Change username
+userc -t - Change sys theme
+blckport - Makes a portscan on domains
+geop - Consult phone (Only BR for now)
+ip -lcz - Track ip's
+ip -dmn - Get domains ip
 ip -whs - Make WHOIS consult  
