@@ -8,6 +8,8 @@ pip install dnspython
 pip install python-whois
 pip install phonenumbers
 pip install colorama
+pip install pywifi
+pip install comtypes
 
 
 echo "[+] Getting BCBS-NetHunter Launcher..."
