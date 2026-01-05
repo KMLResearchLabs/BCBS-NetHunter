@@ -21,21 +21,21 @@ while True:
     ############
 
     if cmd == "help":
-        print("""
-========= <COMMANDS> =========
-help - Show the commands              
-clear - Clean the terminal
-exit - Exit the system
-version - Show the system version
-update - Check for updates
-userc - Get user configs
-userc -u - Change username
-userc -t - Change sys theme
-blckport - Makes a portscan on domains
-geop - Consult phone (Only BR for now)
-ip -lcz - Track ip's
-ip -dmn - Get domains ip
-ip -whs - Make WHOIS consult 
+        print(f"""
+========= <{colors['%<2>%']}COMMANDS{colors['%---%']}> =========
+{colors['%>§<%']}help{colors['%---%']} - Show the commands              
+{colors['%>§<%']}clear{colors['%---%']} - Clean the terminal
+{colors['%>§<%']}exit{colors['%---%']} - Exit the system
+{colors['%>§<%']}version{colors['%---%']} - Show the system version
+{colors['%>§<%']}update{colors['%---%']} - Check for updates
+{colors['%>§<%']}userc{colors['%---%']} - Get user configs
+{colors['%>§<%']}userc -u{colors['%---%']} - Change username
+{colors['%>§<%']}userc -t{colors['%---%']} - Change sys theme
+{colors['%>§<%']}blckport{colors['%---%']} - Makes a portscan on domains
+{colors['%>§<%']}geop{colors['%---%']} - Consult phone (Only BR for now)
+{colors['%>§<%']}ip -lcz{colors['%---%']} - Track ip's
+{colors['%>§<%']}ip -dmn{colors['%---%']} - Get domains ip
+{colors['%>§<%']}ip -whs{colors['%---%']} - Make WHOIS consult 
 """)
 
     if cmd == "clear":

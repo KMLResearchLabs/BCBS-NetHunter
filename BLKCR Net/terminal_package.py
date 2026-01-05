@@ -51,11 +51,11 @@ def banner(dual, colors):
 """)
 
 def get_version(colors):
-    print(" ==== <System Version> ====")
-    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] BLKCR Net Version: 2.7")
-    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] BCBS Version: 2.5")
-    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] GitMancer Version: 1.9")
-    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Developer: ByKurebo")
+    print(f"\n==== <{colors['%<2>%']}System Version{colors['%---%']}> ====")
+    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] BLKCR Net Version: {colors["%>§<%"]}2.7{colors["%---%"]}")
+    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] BCBS Version: {colors["%>§<%"]}2.5{colors["%---%"]}")
+    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] GitMancer Version: {colors["%>§<%"]}1.9{colors["%---%"]}")
+    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Developer: {colors["%>§<%"]}ByKurebo{colors["%---%"]}")
 
 def clear():
     import os
@@ -64,6 +64,11 @@ def clear():
 def exit():
     import os
     os.system('exit()')
+
+
+
+
+
 
 # User configs
 
@@ -105,6 +110,9 @@ def user_configs_USER(colors):
         print(f"\n[{colors["%>!<%"]}!{colors["%---%"]}] Action canceled by user")
 
 
+
+
+
 def get_theme():
     theme = ""
     with open("userconfigs.txt", "r") as f:
@@ -117,22 +125,26 @@ def get_theme():
     return terminaltheme
 
 def user_configs_THEME(colors):
-    themes = ["1", "2", "3"]
+    themes = ["1", "2", "3", "4", "5"]
     new_theme = []
-    print("\n[1] Mono [2] Carnival [3] IceFrost")
+    print("\n[1] Default [2] Mono [3] Carnival [4] IceFrost [5] Magma")
     while True:
         newtheme = str(input("\n>>> Select the theme number: "))
         if newtheme in themes:
             break
         else:
-            print(f" [{colors["%>!<%"]}!{colors["%---%"]}] Select a valid theme number")
+            print(f"[{colors["%>!<%"]}!{colors["%---%"]}] Select a valid theme number")
 
     if newtheme == "1":
-        newtheme = "Mono"
+        newtheme = "Default"
     if newtheme == "2":
-        newtheme = "Carnival"
+        newtheme = "Mono"
     if newtheme == "3":
+        newtheme = "Carnival"
+    if newtheme == "4":
         newtheme = "IceFrost"
+    if newtheme == "5":
+        newtheme = "Magma"
 
     confirmation = str(input("\nConfirm this action? [Y/n]: ")).strip().lower()
     if confirmation == "y":
@@ -153,6 +165,21 @@ def theme():
     from colorama import Fore, Style
     selected_theme = get_theme()
     themes = {
+        "Default": {
+            "%<1>%":Fore.LIGHTWHITE_EX, # Primarly sys color
+            "%<2>%":Fore.LIGHTMAGENTA_EX, # Second sys color
+            "%<3>%":Fore.MAGENTA, # Third color
+            "%>+<%":Fore.LIGHTGREEN_EX, #[+]
+            "%>-<%":Fore.LIGHTRED_EX, # [ERROR]
+            "%>K<%":Fore.LIGHTGREEN_EX, # [ OK ]
+            "%>!<%":Fore.LIGHTGREEN_EX, # [!]/[<>]
+            "%ROT%":Fore.LIGHTRED_EX, # <Root>
+            "%~~~%":Fore.LIGHTGREEN_EX, # ~
+            "%USR%":Fore.LIGHTWHITE_EX, # [User@BCBS]
+            "%>§<%":Fore.LIGHTYELLOW_EX, # ByKurebo
+            "%---%":Style.RESET_ALL # RESET
+        },
+
         "Mono": {
             "%<1>%":Fore.LIGHTWHITE_EX, # Primarly sys color
             "%<2>%":Fore.LIGHTWHITE_EX, # Second sys color
@@ -164,6 +191,7 @@ def theme():
             "%ROT%":Fore.LIGHTWHITE_EX, # <Root>
             "%~~~%":Fore.LIGHTWHITE_EX, # ~
             "%USR%":Fore.LIGHTWHITE_EX, # [User@BCBS]
+            "%>§<%":Fore.LIGHTWHITE_EX, # ByKurebo
             "%---%":Style.RESET_ALL # RESET
         },
     
@@ -178,6 +206,7 @@ def theme():
             "%ROT%":Fore.LIGHTRED_EX, # <Root>
             "%~~~%":Fore.LIGHTGREEN_EX, # ~
             "%USR%":Fore.LIGHTYELLOW_EX, # [User@BCBS]
+            "%>§<%":Fore.LIGHTYELLOW_EX, # ByKurebo
             "%---%":Style.RESET_ALL # RESET
         },
     
@@ -193,20 +222,55 @@ def theme():
             "%ROT%":Fore.LIGHTCYAN_EX, # <Root>
             "%~~~%":Fore.LIGHTGREEN_EX, # ~
             "%USR%":Fore.LIGHTBLUE_EX, # [User@BCBS]
+            "%>§<%":Fore.LIGHTCYAN_EX, # ByKurebo
+            "%---%":Style.RESET_ALL # RESET
+        },
+
+        "Magma": {
+            "%<1>%":Fore.BLACK, # Primarly sys color
+            "%<2>%":Fore.LIGHTRED_EX, # Second sys color
+            "%<3>%":Fore.RED, # Third color
+            "%>+<%":Fore.LIGHTRED_EX, # [+]
+            "%>-<%":Fore.RED, # [ERROR]
+            "%>K<%":Fore.LIGHTRED_EX, # [ OK ]
+            "%>!<%":Fore.LIGHTRED_EX, # [!]/[<>]
+            "%ROT%":Fore.LIGHTRED_EX, # <Root>
+            "%~~~%":Fore.LIGHTGREEN_EX, # ~
+            "%USR%":Fore.RED, # [User@BCBS]
+            "%>§<%":Fore.LIGHTRED_EX, # ByKurebo
             "%---%":Style.RESET_ALL # RESET
         }
     }
-    return themes.get(selected_theme, themes["Mono"])
+    return themes.get(selected_theme, themes["Default"])
 
     
 def theme_banner():
     from colorama import Fore, Style
     theme = get_theme()
+    if theme == "Default":
+        colors = {
+            "%<1>%":Fore.LIGHTWHITE_EX, # Primarly sys color
+            "%<2>%":Fore.LIGHTMAGENTA_EX, # Second sys color
+            "%<3>%":Fore.MAGENTA, # Third color
+            "%>+<%":Fore.LIGHTGREEN_EX, #[+]
+            "%>-<%":Fore.LIGHTRED_EX, # [ERROR]
+            "%>K<%":Fore.LIGHTGREEN_EX, # [ OK ]
+            "%>!<%":Fore.LIGHTGREEN_EX, # [!]/[<>]
+            "%ROT%":Fore.LIGHTRED_EX, # <Root>
+            "%~~~%":Fore.LIGHTGREEN_EX, # ~
+            "%USR%":Fore.LIGHTWHITE_EX, # [User@BCBS]
+            "%>§<%":Fore.LIGHTYELLOW_EX, # ByKurebo
+            "%---%":Style.RESET_ALL # RESET
+        }
+        banner("%Triple%", colors)
+        print(colors["%---%"])
+        return colors
+
     if theme == "Mono":
         colors = {
             "%<1>%":Fore.LIGHTWHITE_EX, # Primarly sys color
             "%<2>%":Fore.LIGHTWHITE_EX, # Second sys color
-            "%<3>%":Fore.BLUE, # Third color
+            "%<3>%":Fore.LIGHTWHITE_EX, # Third color
             "%>+<%":Fore.LIGHTWHITE_EX, #[+]
             "%>-<%":Fore.LIGHTWHITE_EX, # [ERROR]
             "%>K<%":Fore.LIGHTWHITE_EX, # [ OK ]
@@ -214,6 +278,7 @@ def theme_banner():
             "%ROT%":Fore.LIGHTWHITE_EX, # <Root>
             "%~~~%":Fore.LIGHTWHITE_EX, # ~
             "%USR%":Fore.LIGHTWHITE_EX, # [User@BCBS]
+            "%>§<%":Fore.LIGHTWHITE_EX, # ByKurebo
             "%---%":Style.RESET_ALL # RESET
         }
         banner("%Uno%", colors)
@@ -224,7 +289,7 @@ def theme_banner():
         colors = {
             "%<1>%":Fore.LIGHTMAGENTA_EX, # Primarly sys color
             "%<2>%":Fore.LIGHTWHITE_EX, # Second sys color
-            "%<3>%":Fore.BLUE, # Third color
+            "%<3>%":Fore.LIGHTWHITE_EX, # Third color
             "%>+<%":Fore.LIGHTGREEN_EX, #[+]
             "%>-<%":Fore.LIGHTRED_EX, # [ERROR]
             "%>K<%":Fore.LIGHTGREEN_EX, # [ OK ]
@@ -232,6 +297,7 @@ def theme_banner():
             "%ROT%":Fore.LIGHTRED_EX, # <Root>
             "%~~~%":Fore.LIGHTGREEN_EX, # ~
             "%USR%":Fore.LIGHTYELLOW_EX, # [User@BCBS]
+            "%>§<%":Fore.LIGHTYELLOW_EX, # ByKurebo
             "%---%":Style.RESET_ALL # RESET
         }
         banner("%Duo%", colors)
@@ -250,6 +316,26 @@ def theme_banner():
             "%ROT%":Fore.LIGHTCYAN_EX, # <Root>
             "%~~~%":Fore.LIGHTGREEN_EX, # ~
             "%USR%":Fore.LIGHTBLUE_EX, # [User@BCBS]
+            "%>§<%":Fore.LIGHTCYAN_EX, # ByKurebo
+            "%---%":Style.RESET_ALL # RESET
+        }
+        banner("%Triple%", colors)
+        print(colors["%---%"])
+        return colors
+    
+    if theme == "Magma":
+        colors = {
+            "%<1>%":Fore.BLACK, # Primarly sys color
+            "%<2>%":Fore.LIGHTRED_EX, # Second sys color
+            "%<3>%":Fore.RED, # Third color
+            "%>+<%":Fore.LIGHTRED_EX, # [+]
+            "%>-<%":Fore.RED, # [ERROR]
+            "%>K<%":Fore.LIGHTRED_EX, # [ OK ]
+            "%>!<%":Fore.LIGHTRED_EX, # [!]/[<>]
+            "%ROT%":Fore.LIGHTRED_EX, # <Root>
+            "%~~~%":Fore.LIGHTGREEN_EX, # ~
+            "%USR%":Fore.RED, # [User@BCBS]
+            "%>§<%":Fore.LIGHTRED_EX, # ByKurebo
             "%---%":Style.RESET_ALL # RESET
         }
         banner("%Triple%", colors)

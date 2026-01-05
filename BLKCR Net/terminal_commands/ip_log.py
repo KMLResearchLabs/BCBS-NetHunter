@@ -8,7 +8,7 @@ def geo_IP(colors):
         if r['status'] == 'success':
             answer = (
                 "\n"
-                f"=== <GEO IP> ===\n"
+                f"=== <{colors['%<2>%']}GEO IP{colors['%---%']}> ===\n"
                 + "-" * 40 + "\n"  
                 f"[{colors["%>+<%"]}+{colors["%---%"]}] Consulted IP: {r["query"]}\n"
                 f"[{colors["%>+<%"]}+{colors["%---%"]}] Country: {r["country"]}\n"
@@ -34,7 +34,7 @@ def get_domain_ip(colors):
     def get_ip_dns(domain):
         try:
             result = dns.resolver.resolve(domain, "A")
-            print("\n=== <GET IP> ===")
+            print(f"\n=== <{colors['%<2>%']}GET IP{colors['%---%']}> ===")
             print("-" * 40)
             print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Consulted domain: {domain}")
             for ip in result:
@@ -53,7 +53,7 @@ def get_domain_whois(colors):
         try:
             info = whois.whois(dominio)
 
-            print("\n=== <DOMAIN WHOIS> ===")
+            print(f"\n=== <{colors['%<2>%']}DOMAIN WHOIS{colors['%---%']}> ===")
             print("-" * 40)
             print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Consulted domain: {info.domain_name}")
             print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Register: {info.registrar}")

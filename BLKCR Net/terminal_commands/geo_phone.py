@@ -37,7 +37,7 @@ def geo_phone_br(colors):
     phone_formated = phonenumbers.format_number(ajusted_phone, phonenumbers.PhoneNumberFormat.INTERNATIONAL)
 
     print(" ")
-    print(f"=== <{phone_formated} REPORT> ===")
+    print(f"=== <{colors['%<2>%']}GeoPhone Report{colors['%---%']}> ===")
     print("-" * 40)
     print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Consulted phone: {phone_formated}")
     print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Type: {final_type}")

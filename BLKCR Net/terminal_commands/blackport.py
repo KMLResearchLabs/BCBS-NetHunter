@@ -38,7 +38,7 @@ def blackport(colors):
                 executor.submit(scan_port, ip, port)
 
 
-        print("\n=== <BlackPort Report> ===")
+        print(f"\n=== <{colors['%<2>%']}BlackPort Report{colors['%---%']}> ===")
         print("-" * 40)
         print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Open doors of {target}:")
 
