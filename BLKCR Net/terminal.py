@@ -85,4 +85,4 @@ while True:
         get_domain_whois(colors)
 
     if cmd == "wbf":
-        WifiBF(colors)
+        WifiBF()
