@@ -1,3 +1,4 @@
+pkg upgrade
 echo "[+] Getting interpreter"
 pkg install python
 

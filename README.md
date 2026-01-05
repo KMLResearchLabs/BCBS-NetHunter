@@ -68,9 +68,9 @@ Type your new username, and after confirm the action.
 
 Termux commands:
 bcbs - Acess BCBS
-bcbs update - Check for updates
-bcbs upgrade - Upgrade the system
-bcbs upgrade rst - More secure upgrade
+bcbs-UPT - Check for updates
+bcbs-INS - Upgrade the system
+bcbs-RST - More secure upgrade
   
 Terminal commands:  
 help - Show the commands              
