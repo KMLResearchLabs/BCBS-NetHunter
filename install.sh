@@ -1,48 +1,25 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
 echo "[+] Getting interpreter"
-pkg install python
+pkg update -y && pkg install python -y
 
 echo "[+] Getting libs"
-pip install requests
-pip install dnspython
-pip install python-whois
-pip install phonenumbers
-pip install colorama
-
+pip install requests dnspython python-whois phonenumbers colorama
 
 echo "[+] Getting BCBS-NetHunter Launcher..."
-
 chmod +x bcbslauncher.sh
-
-echo "[+] Giving permission..."
-
 cp bcbslauncher.sh $PREFIX/bin/bcbs
-
-echo "[+] Setting command..."
-
-
-chmod +x gitmancerINS.sh
-chmod +x gitmancerRST.sh
-chmod +x gitmancerUPT.sh
+chmod +x $PREFIX/bin/bcbs
 
 echo "[+] Setting GitMancer..."
 
-mkdir -p $PREFIX/bin/bcbs-upgrade
-cp gitmancerINS.sh $PREFIX/bin/bcbs-upgrade/
-ln -s $PREFIX/bin/bcbs-upgrade/gitmancerINS.sh $PREFIX/bin/bcbs-upgrade
-chmod +x $PREFIX/bin/bcbs-upgrade
-
-mkdir -p $PREFIX/bin/bcbs-upforce
-cp gitmancerRST.sh $PREFIX/bin/bcbs-upforce/
-ln -s $PREFIX/bin/bcbs-upforce/gitmancerRST.sh $PREFIX/bin/bcbs-upforce
-chmod +x $PREFIX/bin/bcbs-upforce
-
-mkdir -p $PREFIX/bin/bcbs-update
-cp gitmancerUPT.sh $PREFIX/bin/bcbs-update/
-ln -s $PREFIX/bin/bcbs-update/gitmancerUPT.sh $PREFIX/bin/bcbs-update
-chmod +x $PREFIX/bin/bcbs-update
-
+chmod +x gitmancerINS.sh gitmancerRST.sh gitmancerUPT.sh
+ln -sf gitmancerINS.sh $PREFIX/bin/bcbs-upgrade
+ln -sf gitmancerRST.sh $PREFIX/bin/bcbs-upgrade-rst
+ln -sf gitmancerUPT.sh $PREFIX/bin/bcbs-update
+chmod +x $PREFIX/bin/bcbs-*
 
 echo "[ OK ] Command installation finished"
-echo "Type "bcbs" to inicializate BCBS-NetHunter"
-
+echo "Type 'bcbs' to initialize BCBS-NetHunter"
 hash -r

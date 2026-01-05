@@ -70,7 +70,7 @@ Termux commands:
 bcbs - Acess BCBS
 bcbs update - Check for updates
 bcbs upgrade - Upgrade the system
-bcbs upgrade reset - More secure upgrade
+bcbs upgrade rst - More secure upgrade
   
 Terminal commands:  
 help - Show the commands              
