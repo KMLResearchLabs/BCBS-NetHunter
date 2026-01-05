@@ -1,5 +1,5 @@
 def banner(dual, colors):
-    if dual == False:
+    if dual == "%Uno%":
         print(f"""
 {colors['%<1>%']}
 ########################################
@@ -16,7 +16,7 @@ def banner(dual, colors):
         <By KML Research Labs>
 """)
         
-    if dual == True:
+    if dual == "%Duo%":
         print(f"""
 {colors['%<1>%']}
 ########################################
@@ -32,12 +32,29 @@ def banner(dual, colors):
 
         <{colors['%<2>%']}By KML Research Labs{colors['%<1>%']}>
 """)
+        
+    if dual == '%Triple%':
+        print(f"""
+{colors['%<1>%']}
+########################################
+##                                    ##
+##{colors['%<2>%']}  ██████{colors['%<3>%']}╗{colors['%<2>%']}  ██████{colors['%<3>%']}╗{colors['%<2>%']}██████{colors['%<3>%']}╗{colors['%<2>%']} ███████{colors['%<3>%']}╗{colors['%<2>%']}  {colors['%<1>%']}##
+##{colors['%<2>%']}  ██{colors['%<3>%']}╔══{colors['%<2>%']}██{colors['%<3>%']}╗{colors['%<2>%']}██{colors['%<3>%']}╔════╝{colors['%<2>%']}██{colors['%<3>%']}╔══{colors['%<2>%']}██{colors['%<3>%']}╗{colors['%<2>%']}██{colors['%<3>%']}╔════╝ {colors['%<1>%']} ##
+##{colors['%<2>%']}  ██████{colors['%<3>%']}╔╝{colors['%<2>%']}██{colors['%<3>%']}║{colors['%<2>%']}     ██████{colors['%<3>%']}╔╝{colors['%<2>%']}███████{colors['%<3>%']}╗  {colors['%<1>%']}##
+##{colors['%<2>%']}  ██{colors['%<3>%']}╔══{colors['%<2>%']}██{colors['%<3>%']}╗{colors['%<2>%']}██{colors['%<3>%']}║     {colors['%<2>%']}██{colors['%<3>%']}╔══{colors['%<2>%']}██{colors['%<3>%']}╗╚════{colors['%<2>%']}██{colors['%<3>%']}║  {colors['%<1>%']}##
+##{colors['%<2>%']}  ██████{colors['%<3>%']}╔╝╚{colors['%<2>%']}██████{colors['%<3>%']}╗{colors['%<2>%']}██████{colors['%<3>%']}╔╝{colors['%<2>%']}███████{colors['%<3>%']}║  {colors['%<1>%']}##
+##{colors['%<2>%']}  {colors['%<3>%']}╚═════╝  ╚═════╝╚═════╝ ╚══════╝  {colors['%<1>%']}##
+##                                    ##
+############## {colors['%<2>%']}NetHunter {colors['%<1>%']}###############
+
+        <{colors['%<2>%']}By KML Research Labs{colors['%<1>%']}>
+""")
 
 def get_version(colors):
     print(" ==== <System Version> ====")
-    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] BLKCR Net Version: 2.3")
-    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] BCBS Version: 2.0")
-    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] GitMancer Version: 1.4")
+    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] BLKCR Net Version: 2.7")
+    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] BCBS Version: 2.5")
+    print(f"[{colors["%>+<%"]}+{colors["%---%"]}] GitMancer Version: 1.9")
     print(f"[{colors["%>+<%"]}+{colors["%---%"]}] Developer: ByKurebo")
 
 def clear():
@@ -139,6 +156,7 @@ def theme():
         "Mono": {
             "%<1>%":Fore.LIGHTWHITE_EX, # Primarly sys color
             "%<2>%":Fore.LIGHTWHITE_EX, # Second sys color
+            "%<3>%":Fore.LIGHTWHITE_EX, # Third color
             "%>+<%":Fore.LIGHTWHITE_EX, #[+]
             "%>-<%":Fore.LIGHTWHITE_EX, # [ERROR]
             "%>K<%":Fore.LIGHTWHITE_EX, # [ OK ]
@@ -152,6 +170,7 @@ def theme():
         "Carnival": {
             "%<1>%":Fore.LIGHTMAGENTA_EX, # Primarly sys color
             "%<2>%":Fore.LIGHTWHITE_EX, # Second sys color
+            "%<3>%":Fore.LIGHTWHITE_EX, # Third color
             "%>+<%":Fore.LIGHTGREEN_EX, #[+]
             "%>-<%":Fore.LIGHTRED_EX, # [ERROR]
             "%>K<%":Fore.LIGHTGREEN_EX, # [ OK ]
@@ -166,6 +185,7 @@ def theme():
         "IceFrost": {
             "%<1>%":Fore.LIGHTWHITE_EX, # Primarly sys color
             "%<2>%":Fore.LIGHTCYAN_EX, # Second sys color
+            "%<3>%":Fore.BLUE, # Third color
             "%>+<%":Fore.LIGHTCYAN_EX, # [+]
             "%>-<%":Fore.LIGHTBLUE_EX, # [ERROR]
             "%>K<%":Fore.LIGHTCYAN_EX, # [ OK ]
@@ -186,6 +206,7 @@ def theme_banner():
         colors = {
             "%<1>%":Fore.LIGHTWHITE_EX, # Primarly sys color
             "%<2>%":Fore.LIGHTWHITE_EX, # Second sys color
+            "%<3>%":Fore.BLUE, # Third color
             "%>+<%":Fore.LIGHTWHITE_EX, #[+]
             "%>-<%":Fore.LIGHTWHITE_EX, # [ERROR]
             "%>K<%":Fore.LIGHTWHITE_EX, # [ OK ]
@@ -195,7 +216,7 @@ def theme_banner():
             "%USR%":Fore.LIGHTWHITE_EX, # [User@BCBS]
             "%---%":Style.RESET_ALL # RESET
         }
-        banner(False, colors)
+        banner("%Uno%", colors)
         print(colors["%---%"])
         return colors
 
@@ -203,6 +224,7 @@ def theme_banner():
         colors = {
             "%<1>%":Fore.LIGHTMAGENTA_EX, # Primarly sys color
             "%<2>%":Fore.LIGHTWHITE_EX, # Second sys color
+            "%<3>%":Fore.BLUE, # Third color
             "%>+<%":Fore.LIGHTGREEN_EX, #[+]
             "%>-<%":Fore.LIGHTRED_EX, # [ERROR]
             "%>K<%":Fore.LIGHTGREEN_EX, # [ OK ]
@@ -212,7 +234,7 @@ def theme_banner():
             "%USR%":Fore.LIGHTYELLOW_EX, # [User@BCBS]
             "%---%":Style.RESET_ALL # RESET
         }
-        banner(True, colors)
+        banner("%Duo%", colors)
         print(colors["%---%"])
         return colors
 
@@ -220,6 +242,7 @@ def theme_banner():
         colors = {
             "%<1>%":Fore.LIGHTWHITE_EX, # Primarly sys color
             "%<2>%":Fore.LIGHTCYAN_EX, # Second sys color
+            "%<3>%":Fore.BLUE, # Third color
             "%>+<%":Fore.LIGHTCYAN_EX, # [+]
             "%>-<%":Fore.LIGHTBLUE_EX, # [ERROR]
             "%>K<%":Fore.LIGHTCYAN_EX, # [ OK ]
@@ -229,6 +252,6 @@ def theme_banner():
             "%USR%":Fore.LIGHTBLUE_EX, # [User@BCBS]
             "%---%":Style.RESET_ALL # RESET
         }
-        banner(True, colors)
+        banner("%Triple%", colors)
         print(colors["%---%"])
         return colors

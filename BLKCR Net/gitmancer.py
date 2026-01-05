@@ -11,12 +11,12 @@ def gitmancer(colors):
     git_status = subprocess.run(['git', 'status'], cwd = '..', capture_output=True, text=True)
     print(git_status.stdout)
 
-    git_pull = subprocess.run(['git', 'pull'], cwd = '..', capture_output=True, text=True)
-    print(git_pull.stdout)
+    git_diff = subprocess.run(['git', 'diff'], cwd = '..', capture_output=True, text=True)
+    print(git_diff.stdout)
 
     #Python lib
 
-    print(f"[{colors["%>!<%"]}<>{colors["%---%"]}] Updating libraries...")
+    print(f"[{colors["%>!<%"]}<>{colors["%---%"]}] Checking libraries...")
 
     print(f"[{colors["%>!<%"]}<>{colors["%---%"]}] Checking/installing requests...")
     pip_requests = subprocess.run(['pip', 'install', 'requests'], cwd = '..', capture_output=True, text=True)

@@ -6,7 +6,7 @@ from terminal_commands.geo_phone import *
 from terminal_commands.ip_log import *
 
 init()
-clear()
+
 theme_banner()
 
 while True:
@@ -51,13 +51,6 @@ ip -whs - Make WHOIS consult
 
     if cmd == "update":
         gitmancer(colors)
-        print(f"\n [{colors["%>!<%"]}!{colors["%---%"]}] Restart required to apply updates")
-        restart = str(input("\n Restart now? [y/n]: ")).strip().lower()
-        if restart == "y":
-            exit()
-            break
-        else:
-            print(f"\n [{colors["%>!<%"]}!{colors["%---%"]}] Restart cancelled by user.")
        
 
     if cmd == "userc":
