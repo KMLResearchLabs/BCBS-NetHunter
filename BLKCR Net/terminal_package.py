@@ -341,3 +341,21 @@ def theme_banner():
         banner("%Triple%", colors)
         print(colors["%---%"])
         return colors
+    
+def theme_show(colors):
+    user = get_user()
+    print(f"""\n
+==== <DEMONSTRATION> ====
+{colors["%<1>%"]}111{colors["%---%"]} - %<1>%
+{colors["%<2>%"]}222{colors["%---%"]} - %<2>%
+{colors["%<3>%"]}333{colors["%---%"]} - %<3>%
+[{colors["%>+<%"]}+{colors["%---%"]}] - %>+<%
+[{colors["%>-<%"]}ERROR{colors["%---%"]}] - %>-<%
+[ {colors["%>K<%"]}OK{colors["%---%"]} ] - %>K<%
+[{colors["%>!<%"]}<>{colors["%---%"]}] - %>!<%
+[{colors["%>!<%"]}!{colors["%---%"]}] - %>!<%
+<{colors["%ROT%"]}Root{colors["%---%"]}> - %ROT%
+{colors["%~~~%"]}~{colors["%---%"]} - %~~~%
+[{colors["%USR%"]}{user}@BCBS{colors["%---%"]}] - %USR%
+{colors["%>§<%"]}ByKurebo{colors["%---%"]} - %>§<%
+""")

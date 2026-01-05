@@ -31,6 +31,7 @@ while True:
 {colors['%>§<%']}userc{colors['%---%']} - Get user configs
 {colors['%>§<%']}userc -u{colors['%---%']} - Change username
 {colors['%>§<%']}userc -t{colors['%---%']} - Change sys theme
+{colors['%>§<%']}userc -ts{colors['%---%']} - Demonstrate the theme
 {colors['%>§<%']}blckport{colors['%---%']} - Makes a portscan on domains
 {colors['%>§<%']}geop{colors['%---%']} - Consult phone (Only BR for now)
 {colors['%>§<%']}ip -lcz{colors['%---%']} - Track ip's
@@ -61,6 +62,9 @@ while True:
 
     if cmd == "userc -t":
         user_configs_THEME(colors)
+
+    if cmd == "userc -ts":
+        theme_show(colors)
 
 
     if cmd == "blckport":
