@@ -34,16 +34,4 @@ def gitmancer(colors):
     pip_phonenumbers = subprocess.run(['pip', 'install', 'phonenumbers'], cwd = '..', capture_output=True, text=True)
     print(pip_phonenumbers.stdout)
 
-    print(f"[{colors["%>!<%"]}<>{colors["%---%"]}] Checking/installing colorama...")
-    pip = subprocess.run(['pip', 'install', 'colorama'], cwd = '..', capture_output=True, text=True)
-    print(pip.stdout)
-
-    print(f"[{colors["%>!<%"]}<>{colors["%---%"]}] Checking/installing pywifi...")
-    pip = subprocess.run(['pip', 'install', 'pywifi'], cwd = '..', capture_output=True, text=True)
-    print(pip.stdout)
-
-    print(f"[{colors["%>!<%"]}<>{colors["%---%"]}] Checking/installing comtypes...")
-    pip = subprocess.run(['pip', 'install', 'comtypes'], cwd = '..', capture_output=True, text=True)
-    print(pip.stdout)
-
     print(f"\n[{colors["%>K<%"]} OK {colors["%---%"]}] All packages checked.")

