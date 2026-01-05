@@ -1,25 +1,39 @@
-#!/data/data/com.termux/files/usr/bin/bash
-set -e
-
 echo "[+] Getting interpreter"
-pkg update -y && pkg install python -y
+pkg install python
 
 echo "[+] Getting libs"
-pip install requests dnspython python-whois phonenumbers colorama
+pip install requests
+pip install dnspython
+pip install python-whois
+pip install phonenumbers
+pip install colorama
+
 
 echo "[+] Getting BCBS-NetHunter Launcher..."
+
 chmod +x bcbslauncher.sh
+
+echo "[+] Giving permission..."
+
 cp bcbslauncher.sh $PREFIX/bin/bcbs
-chmod +x $PREFIX/bin/bcbs
+
+echo "[+] Setting command..."
+
+
+
+chmod +x gitmancerINS.sh
+chmod +x gitmancerRST.sh
+chmod +x gitmancerUPT.sh
 
 echo "[+] Setting GitMancer..."
 
-chmod +x gitmancerINS.sh gitmancerRST.sh gitmancerUPT.sh
-ln -sf gitmancerINS.sh $PREFIX/bin/bcbs-upgrade
-ln -sf gitmancerRST.sh $PREFIX/bin/bcbs-upgrade-rst
-ln -sf gitmancerUPT.sh $PREFIX/bin/bcbs-update
-chmod +x $PREFIX/bin/bcbs-*
+cp gitmancerINS.sh $PREFIX/bin/bcbs-INS
+cp gitmancerRST.sh $PREFIX/bin/bcbs-RST
+cp gitmancerUPT.sh $PREFIX/bin/bcbs-UPT
+
+
 
 echo "[ OK ] Command installation finished"
-echo "Type 'bcbs' to initialize BCBS-NetHunter"
+echo "Type "bcbs" to inicializate BCBS-NetHunter"
+
 hash -r
