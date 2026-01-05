@@ -20,17 +20,26 @@ cp bcbslauncher.sh $PREFIX/bin/bcbs
 echo "[+] Setting command..."
 
 
-
 chmod +x gitmancerINS.sh
 chmod +x gitmancerRST.sh
 chmod +x gitmancerUPT.sh
 
 echo "[+] Setting GitMancer..."
 
-cp gitmancerINS.sh $PREFIX/bin/bcbs upgrade
-cp gitmancerRST.sh $PREFIX/bin/bcbs upgrade rst
-cp gitmancerUPT.sh $PREFIX/bin/bcbs update
+mkdir -p $PREFIX/bin/bcbs-upgrade
+cp gitmancerINS.sh $PREFIX/bin/bcbs-upgrade/
+ln -s $PREFIX/bin/bcbs-upgrade/gitmancerINS.sh $PREFIX/bin/bcbs-upgrade
+chmod +x $PREFIX/bin/bcbs-upgrade
 
+mkdir -p $PREFIX/bin/bcbs-upforce
+cp gitmancerRST.sh $PREFIX/bin/bcbs-upforce/
+ln -s $PREFIX/bin/bcbs-upforce/gitmancerRST.sh $PREFIX/bin/bcbs-upforce
+chmod +x $PREFIX/bin/bcbs-upforce
+
+mkdir -p $PREFIX/bin/bcbs-update
+cp gitmancerUPT.sh $PREFIX/bin/bcbs-update/
+ln -s $PREFIX/bin/bcbs-update/gitmancerUPT.sh $PREFIX/bin/bcbs-update
+chmod +x $PREFIX/bin/bcbs-update
 
 
 echo "[ OK ] Command installation finished"
