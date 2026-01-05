@@ -71,7 +71,7 @@ def WifiBF(colors):
         time.sleep(2.5)
         
         ssid = input(">>> Type Wifi name (SSID): ")
-        filee = ('MrPaper.txt')
+        filee = ('terminal_commands/MrPaper.txt')
 
 
         if os.path.exists(filee):
