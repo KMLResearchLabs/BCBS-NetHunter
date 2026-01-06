@@ -92,7 +92,7 @@ def WifiBF():
 
     print(f"[+] Cracking '{ssid}'...")
 
-    with open(r'terminal_commands\MrPaper.txt', 'r') as f:
+    with open(r'MrPaper.txt', 'r') as f:
         while True:
             line = f.readline()
             if not line:
@@ -110,3 +110,4 @@ def WifiBF():
                 print("[ OK ] Cracked!")
                 print(f"[+] {ssid} password: {passwd}")
                 break
+
