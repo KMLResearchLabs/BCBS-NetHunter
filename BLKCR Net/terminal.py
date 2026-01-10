@@ -37,8 +37,7 @@ while True:
 {colors['%>§<%']}geop{colors['%---%']} - Consult phone (Only BR for now)
 {colors['%>§<%']}ip -lcz{colors['%---%']} - Track ip's
 {colors['%>§<%']}ip -dmn{colors['%---%']} - Get domains ip
-{colors['%>§<%']}ip -whs{colors['%---%']} - Make WHOIS consult
-{colors['%>§<%']}wbf{colors['%---%']} - Wifi password brute force (Only BR for now) 
+{colors['%>§<%']}ip -whs{colors['%---%']} - Make WHOIS consult 
 """)
 
     if cmd == "clear":
@@ -83,6 +82,3 @@ while True:
 
     if cmd == "ip -whs":
         get_domain_whois(colors)
-
-    if cmd == "wbf":
-        WifiBF()

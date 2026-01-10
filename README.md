@@ -87,4 +87,3 @@ geop - Consult phone (Only BR for now)
 ip -lcz - Track ip's
 ip -dmn - Get domains ip
 ip -whs - Make WHOIS consult  
-wbf - Wifi password brute force (Only BR for now)
