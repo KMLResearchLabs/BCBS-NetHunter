@@ -4,10 +4,9 @@ from gitmancer import *
 from terminal_commands.blackport import *
 from terminal_commands.geo_phone import *
 from terminal_commands.ip_log import *
-from terminal_commands.WifiBF import *
 
 init()
-
+clear()
 theme_banner()
 
 while True:
@@ -82,3 +81,4 @@ while True:
 
     if cmd == "ip -whs":
         get_domain_whois(colors)
+
